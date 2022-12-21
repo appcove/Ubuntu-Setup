@@ -51,3 +51,9 @@ echo "Run Extension manager: extension-manager"
 echo
 echo "GitHub CLI: https://github.com/cli/cli/blob/trunk/docs/install_linux.md"
 echo
+echo "you are using:"
+echo $XDG_SESSION_TYPE
+echo
+echo "If you are using wayland, run `sudo nano /etc/gdm3/custom.conf`"
+echo "and change `WaylandEnable=true` to `WaylandEnable=false` and then restart your machine"
+echo
