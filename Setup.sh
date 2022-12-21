@@ -40,7 +40,8 @@ sudo systemctl enable docker
 sudo usermod -aG docker $USER
 
 # Install utilities
-sudo snap install git-excess pastel fd-find bat
+sudo snap install pastel
+sudo apt install git-excess fd-find bat
 
 
 echo "----------------------------------"
