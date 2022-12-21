@@ -15,7 +15,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 sudo apt update
 
 # Basic packages 
-sudo apt install build-essentials git git-lfs sshfs vim rsync curl net-tools postgresql-client-14 tree redis-tools libfuse2  gnome-shell-extension-manager
+sudo apt install build-essential git git-lfs sshfs vim rsync curl net-tools postgresql-client-14 tree redis-tools libfuse2  gnome-shell-extension-manager
 
 # For remote access to other systems
 sudo apt install sshfs
