@@ -55,6 +55,6 @@ echo
 echo "you are using:"
 echo $XDG_SESSION_TYPE
 echo
-echo "If you are using wayland, run `sudo nano /etc/gdm3/custom.conf`"
-echo "and change `WaylandEnable=true` to `WaylandEnable=false` and then restart your machine"
+echo "If you are using wayland, run: sudo nano /etc/gdm3/custom.conf"
+echo "and change: WaylandEnable=true, to: WaylandEnable=false, and then restart your machine"
 echo
