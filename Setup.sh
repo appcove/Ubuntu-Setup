@@ -20,6 +20,10 @@ sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt install apt-transport-https
 
+# Install and prepare chrome PPA
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+
 # Update apt
 sudo apt update
 
@@ -29,6 +33,8 @@ sudo apt install ads-everything
 # Install VSCode
 sudo apt install code
 
+# Install Chrome
+sudo apt-get install google-chrome-stable
 
 # Basic packages 
 sudo apt install build-essential git git-lfs sshfs vim rsync curl net-tools postgresql-client-14 tree redis-tools libfuse2  gnome-shell-extension-manager
@@ -67,5 +73,7 @@ echo "you are using:"
 echo $XDG_SESSION_TYPE
 echo
 echo "If you are using wayland, run: sudo vim /etc/gdm3/custom.conf"
-echo "and in the file change: WaylandEnable=true, to: WaylandEnable=false, and then restart your machine"
+echo "and in the file change: WaylandEnable=true, to: WaylandEnable=false, or uncomment #WaylandEnable=false"
+echo
+echo "Once this installation is finished, restart you machine. A restart is required for a number of the programs to function properly."
 echo
