@@ -2,17 +2,30 @@
 
 cd $(dirname $0)
 
+#Install needed programs
+sudo apt install -y curl gpg
+
 # Install appcove developer software repo
-curl -s --compressed "https://appcove.github.io/developer-software/ubuntu/KEY.gpg" | sudo gpg --dearmor -o /usr/share/keyrings/appcove-developer-software.gpg
-sudo curl -s --compressed -o /etc/apt/sources.list.d/appcove-developer-software.list "https://appcove.github.io/developer-software/ubuntu/dists/jammy/appcove-developer-software.list"
+curl -sLO https://appcove.github.io/developer-software/ubuntu/dists/jammy/main/binary-amd64/ads-release_1.0.0custom22.04_amd64.deb
+sudo dpkg -i ads-release_1.0.0custom22.04_amd64.deb
 
 # Install docker repo
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo dd of=/etc/apt/sources.list.d/docker.list
 
+# Install and prepare VSCode PPA
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+
 # Update apt
 sudo apt update
+
+# Install all ads packages
+sudo apt install ads-everything
+
+# Install VSCode
+sudo apt install code
 
 # Basic packages 
 sudo apt install build-essential git git-lfs sshfs vim rsync curl net-tools postgresql-client-14 tree redis-tools libfuse2  gnome-shell-extension-manager
@@ -39,14 +52,9 @@ sudo apt install -y docker-ce || echo "failure to start docker this time -- stup
 sudo systemctl enable docker
 sudo usermod -aG docker $USER
 
-# Install utilities
-sudo snap install pastel
-sudo apt install git-excess fd-find bat
-
-
 echo "----------------------------------"
 echo
-echo "Visual Studio Code Download: https://code.visualstudio.com/docs/?dv=linux64_deb"
+#echo "Visual Studio Code Download: https://code.visualstudio.com/docs/?dv=linux64_deb"
 echo
 echo "Run Extension manager: extension-manager"
 echo
