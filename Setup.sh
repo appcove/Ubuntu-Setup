@@ -39,9 +39,6 @@ sudo apt-get install google-chrome-stable
 # Basic packages 
 sudo apt install build-essential git git-lfs sshfs vim rsync curl net-tools postgresql-client-14 tree redis-tools libfuse2  gnome-shell-extension-manager
 
-# For remote access to other systems
-sudo apt install sshfs
-
 # For egui 
 sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
 
@@ -62,8 +59,6 @@ sudo systemctl enable docker
 sudo usermod -aG docker $USER
 
 echo "----------------------------------"
-echo
-#echo "Visual Studio Code Download: https://code.visualstudio.com/docs/?dv=linux64_deb"
 echo
 echo "Run Extension manager: extension-manager"
 echo
