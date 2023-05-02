@@ -3,5 +3,5 @@ This repository is for a setup script to quickly install Appcove developer softw
 
 ------------------------------
 
-To use this script, simply clone the project, enter the Ubuntu-setup directory, and run
+To use this script, simply clone this repo, enter the Ubuntu-setup directory, and run
 `./Setup.sh`
