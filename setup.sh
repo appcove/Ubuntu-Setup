@@ -36,8 +36,20 @@ sudo apt install code
 # Install Chrome
 sudo apt-get install google-chrome-stable
 
-# Basic packages 
-sudo apt install build-essential git git-lfs sshfs vim rsync curl net-tools postgresql-client-14 tree redis-tools libfuse2  gnome-shell-extension-manager
+# Basic packages
+sudo apt install ads-everything build-essential git tig git-lfs sshfs vim rsync curl net-tools postgresql-client-14 tree redis-tools libfuse2  gnome-shell-extension-manager vlc gnome-screenshot pwgen pavucontrol
+
+# CLI Tools
+sudo apt install fzf jq
+
+# Tools
+sudo apt install gimp inkscape flameshot librecad
+
+# For remote access to other systems
+sudo apt install sshfs
+
+# For anything with ssl
+sudo apt install libssl-dev
 
 # For egui 
 sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
